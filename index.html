@@ -3,272 +3,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Júlia | Social Media & Criação de Conteúdo</title>
-  <meta name="description" content="Júlia — Social Media. Gestão de redes sociais, criação de conteúdo, edição de vídeos e estratégia para Instagram com criatividade e dedicação.">
+  <title>JD Social Mídia | Júlia, social media e criação de conteúdo</title>
+  <meta name="description" content="Júlia, social media. Gestão de Instagram, criação de conteúdo e identidade visual. Pacotes a partir de R$ 280 e plano mensal com primeira semana de teste.">
+  <meta name="theme-color" content="#4a0f1b">
+  <link rel="icon" type="image/png" href="img/logo-jd.png">
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ===== PROGRESS BAR ===== -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#topo" class="nav__logo">Júlia<span>.</span></a>
+    <div class="wrap nav__inner">
+      <a href="#topo" class="nav__brand" aria-label="JD Social Mídia, ir ao topo">
+        <img src="img/logo-jd.png" alt="JD" width="329" height="208">
+        <span>social mídia</span>
+      </a>
 
-      <nav class="nav__links" id="navLinks">
+      <nav class="nav__links" id="navLinks" aria-label="Principal">
         <a href="#sobre" class="nav__link">Sobre</a>
         <a href="#servicos" class="nav__link">Serviços</a>
+        <a href="#planos" class="nav__link">Valores</a>
         <a href="#portfolio" class="nav__link">Portfólio</a>
         <a href="#processo" class="nav__link">Processo</a>
         <a href="#depoimentos" class="nav__link">Depoimentos</a>
-        <a href="#contato" class="nav__link nav__link--cta">Fale comigo</a>
+        <a href="#contato" class="nav__cta">Fale comigo</a>
       </nav>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
+  <main id="conteudo">
+
   <!-- ===== HERO ===== -->
   <section class="hero" id="topo">
-    <div class="hero__bg-shape hero__bg-shape--one"></div>
-    <div class="hero__bg-shape hero__bg-shape--two"></div>
-
-    <div class="container hero__grid">
-      <div class="hero__content reveal">
-        <p class="eyebrow">Social Media &amp; Criação de Conteúdo</p>
-        <h1 class="hero__title">
-          Transformo ideias em <span class="highlight">conteúdo</span> que conecta e vende.
-        </h1>
-        <p class="hero__desc">
-          Sou a Júlia. Cuido do seu Instagram do início ao fim — planejamento,
-          criação de posts e Reels, edição e estratégia — para o seu perfil parecer
-          exatamente com o que a sua marca merece: profissional, autêntico e atrativo.
-        </p>
-        <div class="hero__actions">
-          <a href="#portfolio" class="btn btn--primary">Conheça meu trabalho</a>
-          <a href="#contato" class="btn btn--outline">Fale comigo</a>
-        </div>
-
-        <div class="hero__badges">
-          <div class="hero__badge">
-            <strong>Início</strong>
-            <span>Dedicação total a cada projeto</span>
-          </div>
-          <div class="hero__badge">
-            <strong>Foco</strong>
-            <span>Conteúdo com estratégia</span>
-          </div>
-          <div class="hero__badge">
-            <strong>Estilo</strong>
-            <span>Criatividade autêntica</span>
-          </div>
-        </div>
+    <div class="wrap">
+      <div class="hero__meta" data-enter style="--d:.05s">
+        <span>Social media &amp; criação de conteúdo</span>
       </div>
 
-      <div class="hero__visual reveal">
-        <div class="hero__frame hero__frame--main">
-          <img src="img/portfolio-semijoias-still.jpg" alt="Still de produto — semijoias produzido por Júlia">
+      <div class="hero__stage g12">
+        <h1 class="hero__title">
+          <span class="ln"><span style="--d:.15s">Sua marca presente,</span></span>
+          <span class="ln"><span style="--d:.27s">conectando com quem</span></span>
+          <span class="ln"><span style="--d:.39s"><em>realmente importa.</em></span></span>
+        </h1>
+
+        <div class="hero__photo">
+          <img src="img/portfolio-ensaio-retrato.jpg" alt="Ensaio fotográfico feito pela Júlia para a Ceci Boutique" width="900" height="1600">
         </div>
-        <div class="hero__frame hero__frame--small">
-          <img src="img/portfolio-ensaio-retrato.jpg" alt="Ensaio fotográfico para redes sociais">
-        </div>
-        <div class="hero__stat-card">
-          <span class="hero__stat-number">1 post</span>
-          <span class="hero__stat-label">gerou 3 novos clientes para uma cliente real*</span>
+
+        <div class="hero__body" data-enter style="--d:.6s">
+          <p class="hero__lead">
+            Sou a Júlia. Cuido do Instagram da sua marca: planejamento, fotos e vídeos,
+            publicação e análise de resultados.
+          </p>
+          <div class="hero__actions">
+            <a href="#planos" class="btn btn--solid">Ver valores</a>
+            <a href="https://wa.me/5533998521669" target="_blank" rel="noopener" class="btn btn--line">Chamar no WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <a href="#sobre" class="scroll-cue" aria-label="Rolar para baixo">
-      <span></span>
-    </a>
   </section>
 
   <!-- ===== SOBRE ===== -->
   <section class="about" id="sobre">
-    <div class="container about__grid">
-      <div class="about__visual reveal">
-        <div class="about__photo-frame">
-          <img src="img/julia-selfie.jpg" alt="Júlia, social media">
-        </div>
-        <div class="about__deco-line"></div>
-      </div>
-
-      <div class="about__content reveal">
-        <p class="eyebrow">Sobre mim</p>
-        <h2 class="section-title">Oi, eu sou a Júlia 🤍</h2>
-        <p class="about__text">
-          Tenho 17 anos e estou construindo minha carreira como Social Media com muita vontade
-          de aprender e crescer a cada dia. Escolhi essa área porque sempre gostei de criar,
-          pensar em ideias e transformar coisas simples em conteúdos que chamam atenção.
-        </p>
-        <p class="about__text">
-          Com o tempo, percebi que queria ir além de apenas postar: queria entender estratégias
-          e ajudar pessoas e marcas a mostrarem seu trabalho de forma mais profissional e autêntica.
-          Para mim, ser Social Media é unir <strong>criatividade, estratégia e paixão</strong> pelo
-          que faço.
-        </p>
-
-        <div class="about__info-grid">
-          <div class="about__info">
-            <h3>Área de atuação</h3>
-            <p>Gestão de redes sociais, criação de conteúdo, edição de vídeos, Reels, carrosséis e identidade visual.</p>
-          </div>
-          <div class="about__info">
-            <h3>Forma de trabalho</h3>
-            <p>Entendo cada negócio de perto para transformar suas ideias em conteúdos com a cara dele.</p>
-          </div>
+    <div class="wrap">
+      <div class="about__grid g12">
+        <div class="about__photo" data-reveal>
+          <img src="img/julia-selfie.jpg" alt="Júlia, social media" width="1200" height="1600" loading="lazy">
         </div>
 
-        <ul class="about__diferenciais">
-          <li>Dedicação total e olhar cuidadoso em cada detalhe</li>
-          <li>Comunicação próxima, direta e transparente</li>
-          <li>Sempre em evolução, atenta às tendências das redes</li>
-          <li>Comprometimento com prazos e organização</li>
-        </ul>
+        <h2 class="about__title">Oi, eu sou a Júlia</h2>
+
+        <p class="about__statement">
+          Sou uma <em>Social Media em desenvolvimento</em>, com interesse em criação de conteúdo,
+          estratégias digitais e comunicação visual. Busco aprimorar minhas habilidades e
+          desenvolver projetos que valorizem a identidade de cada marca, conectando criatividade
+          e estratégia para construir uma presença digital mais profissional e autêntica.
+        </p>
+
+        <a class="link about__link" href="https://www.instagram.com/davila_socialmidia" target="_blank" rel="noopener">Ver o Instagram</a>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVIÇOS ===== -->
   <section class="services" id="servicos">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">O que eu faço</p>
-        <h2 class="section-title">Serviços</h2>
-        <p class="section-subtitle">
-          Soluções completas para o seu perfil ter presença, consistência e uma identidade que representa sua marca.
-        </p>
+    <div class="wrap">
+      <div class="services__grid g12">
+        <div class="services__head">
+          <h2>Serviços</h2>
+          <p class="services__intro">Do planejamento à publicação, tudo o que o seu perfil precisa para ter presença e consistência.</p>
+        </div>
+
+        <ul class="svc-list">
+          <li>
+            <h3>Gestão de redes sociais</h3>
+            <p>Cuido do perfil de ponta a ponta: organização, rotina de posts e acompanhamento.</p>
+          </li>
+          <li>
+            <h3>Criação de conteúdo</h3>
+            <p>Fotos, vídeos e textos pensados para o público da sua marca.</p>
+          </li>
+          <li>
+            <h3>Planejamento de conteúdo</h3>
+            <p>Calendário editorial com propósito, para cada post ter um motivo.</p>
+          </li>
+          <li>
+            <h3>Posts e carrosséis</h3>
+            <p>Posts estáticos e carrosséis claros, com a identidade da marca.</p>
+          </li>
+          <li>
+            <h3>Edição de vídeos e Reels</h3>
+            <p>Cortes, ritmo e trilha para o vídeo prender até o final.</p>
+          </li>
+          <li>
+            <h3>Estratégia para Instagram</h3>
+            <p>Direção para crescer de forma orgânica e falar com o público certo.</p>
+          </li>
+          <li>
+            <h3>Identidade visual</h3>
+            <p>Logo, paleta e tipografia para o perfil ser reconhecido de cara.</p>
+          </li>
+          <li>
+            <h3>Copywriting</h3>
+            <p>Legendas e textos que comunicam e levam a uma ação.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALORES: PACOTES DE DIVULGAÇÃO DIGITAL ===== -->
+  <section class="plans" id="planos">
+    <div class="wrap">
+      <div class="plans__head g12">
+        <h2>Divulgação digital</h2>
+        <p class="plans__intro">Três pacotes. O que muda de um para o outro é o quanto de conteúdo e de estratégia entra em cada um.</p>
       </div>
 
-      <div class="services__grid">
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3V4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Gestão de redes sociais</h3>
-          <p>Cuido do seu perfil de ponta a ponta: organização, rotina de postagens e acompanhamento contínuo.</p>
+      <div class="tiers">
+        <div class="tiers__head" aria-hidden="true">
+          <span>Pacote</span>
+          <span>O que inclui</span>
+          <span>Valor</span>
         </div>
 
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
-          </div>
-          <h3>Criação de conteúdo</h3>
-          <p>Ideias e produção de conteúdos autênticos, pensados para o público certo da sua marca.</p>
-        </div>
+        <a class="tier" href="#contato" data-plan="Pacote Básico (R$280)">
+          <span class="tier__name">Básico</span>
+          <span class="tier__desc">Gestão do perfil, com publicações semanais, stories e reels.</span>
+          <span class="tier__price"><small>R$</small>280</span>
+        </a>
+        <a class="tier" href="#contato" data-plan="Pacote Intermediário (R$330)">
+          <span class="tier__name">Intermediário</span>
+          <span class="tier__desc">Stories frequentes, posts no feed, reels e maior interação com o público.</span>
+          <span class="tier__price"><small>R$</small>330</span>
+        </a>
+        <a class="tier" href="#contato" data-plan="Pacote Completo (R$380)">
+          <span class="tier__name">Completo</span>
+          <span class="tier__desc">Planejamento estratégico, criação de conteúdo e gerenciamento do Instagram.</span>
+          <span class="tier__price"><small>R$</small>380</span>
+        </a>
+      </div>
 
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="1.6"/></svg>
-          </div>
-          <h3>Planejamento de conteúdo</h3>
-          <p>Calendário editorial organizado, com propósito e consistência em cada publicação.</p>
-        </div>
+      <div class="included">
+        <p class="included__title">Incluso em todos os pacotes</p>
+        <ul>
+          <li>Gestão do perfil</li>
+          <li>Criação de conteúdos</li>
+          <li>Análise de resultados</li>
+          <li>Suporte contínuo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="8" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
-          </div>
-          <h3>Posts e carrosséis</h3>
-          <p>Criação visual de posts estáticos e carrosséis que prendem atenção e informam com clareza.</p>
-        </div>
+  <!-- ===== VALORES: PLANO MENSAL ===== -->
+  <section class="monthly" id="mensal">
+    <div class="wrap">
+      <div class="monthly__head g12">
+        <h2>Plano mensal</h2>
+        <p class="monthly__note">A primeira semana é de teste: você vê o conteúdo e confere se gosta.</p>
+      </div>
 
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h11v14H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 9l5-3v12l-5-3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Edição de vídeos e Reels</h3>
-          <p>Cortes dinâmicos, ritmo e trilha para vídeos que retêm o público até o final.</p>
+      <div class="monthly__opts">
+        <div class="opt">
+          <p class="opt__len">1 mês</p>
+          <p class="opt__price"><small>R$</small>350</p>
+          <a href="#contato" class="btn btn--light" data-plan="Plano mensal, 1 mês (R$350)">Quero 1 mês</a>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Estratégia para Instagram</h3>
-          <p>Direcionamento pensado para crescimento orgânico e conexão real com o público.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9 9c0-1.5 1.3-2.5 3-2.5s3 1 3 2.3c0 1.6-1.7 1.9-2.7 2.6-.7.5-.9 1-.9 1.8M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Identidade visual</h3>
-          <p>Paleta, tipografia e padrão visual para o seu perfil ser reconhecido de imediato.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Copywriting</h3>
-          <p>Legendas e textos estratégicos que engajam, comunicam e levam a uma ação.</p>
+        <div class="opt opt--big">
+          <p class="opt__len">3 meses</p>
+          <p class="opt__price"><small>R$</small>750</p>
+          <a href="#contato" class="btn btn--light" data-plan="Plano mensal, 3 meses (R$750)">Quero 3 meses</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PLANOS ===== -->
-  <section class="plans" id="planos">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Investimento</p>
-        <h2 class="section-title">Planos e valores</h2>
-        <p class="section-subtitle">Opções flexíveis para diferentes momentos e tamanhos de negócio.</p>
-      </div>
-
-      <div class="plans__grid">
-        <div class="plan-card reveal">
-          <h3>Plano Mensal</h3>
-          <p class="plan-card__price">R$ 240<span>/mês</span></p>
-          <ul class="plan-card__list">
-            <li>Posts 3x por semana</li>
-            <li>Stories todos os dias</li>
-            <li>Organização do perfil</li>
-          </ul>
-          <a href="#contato" class="btn btn--outline btn--block" data-plan="Plano Mensal (R$240)">Solicitar orçamento</a>
+  <!-- ===== VALORES: IDENTIDADE VISUAL E AVULSOS ===== -->
+  <section class="identity" id="identidade">
+    <div class="wrap">
+      <div class="identity__grid g12">
+        <div class="identity__head">
+          <h2>Logo e identidade visual</h2>
+          <p class="identity__intro">Sua marca com estratégia, estilo e presença digital.</p>
         </div>
 
-        <div class="plan-card plan-card--featured reveal">
-          <span class="plan-card__tag">Empresas &amp; agências</span>
-          <h3>30 Posts Programados</h3>
-          <p class="plan-card__price">R$ 1.000<span>/mês</span></p>
-          <ul class="plan-card__list">
-            <li>30 posts programados no mês</li>
-            <li>Ideal para empresas maiores</li>
-            <li>Atendimento para terceirizados</li>
-          </ul>
-          <a href="#contato" class="btn btn--primary btn--block" data-plan="30 Posts Programados (R$1000)">Solicitar orçamento</a>
-        </div>
+        <div class="identity__rows">
+          <a class="mrow" href="#contato" data-plan="Logo Simples (R$100)">
+            <span class="mrow__top">
+              <span class="mrow__name">Logo Simples</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>100</span>
+            </span>
+            <span class="mrow__desc">Uma logo profissional, feita para representar sua marca.</span>
+          </a>
+          <a class="mrow" href="#contato" data-plan="Identidade Visual Básica (R$200)">
+            <span class="mrow__top">
+              <span class="mrow__name">Identidade Visual Básica</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>200</span>
+            </span>
+            <span class="mrow__desc">Logo, paleta de cores e tipografia para uma marca consistente.</span>
+          </a>
+          <a class="mrow" href="#contato" data-plan="Identidade Visual Intermediária (R$250)">
+            <span class="mrow__top">
+              <span class="mrow__name">Identidade Visual Intermediária</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>250</span>
+            </span>
+            <span class="mrow__desc">Logo, variações, paleta de cores, tipografia e elementos gráficos.</span>
+          </a>
+          <a class="mrow" href="#contato" data-plan="Identidade Visual Completa (R$400)">
+            <span class="mrow__top">
+              <span class="mrow__name">Identidade Visual Completa</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>400</span>
+            </span>
+            <span class="mrow__desc">Tudo do pacote intermediário + cartão digital, destaques e manual da marca.</span>
+          </a>
 
-        <div class="plan-card reveal">
-          <h3>Post Avulso</h3>
-          <p class="plan-card__price">R$ 30<span>/post</span></p>
-          <ul class="plan-card__list">
-            <li>Criação individual de post</li>
-            <li>Sem compromisso mensal</li>
-          </ul>
-          <a href="#contato" class="btn btn--outline btn--block" data-plan="Post Avulso (R$30)">Solicitar orçamento</a>
-        </div>
+          <p class="identity__sub">Avulsos</p>
 
-        <div class="plan-card reveal">
-          <h3>Organização de Perfil</h3>
-          <p class="plan-card__price">R$ 40<span>/único</span></p>
-          <ul class="plan-card__list">
-            <li>Apenas organização visual</li>
-            <li>Sem criação de conteúdo</li>
-          </ul>
-          <a href="#contato" class="btn btn--outline btn--block" data-plan="Organização de Perfil (R$40)">Solicitar orçamento</a>
+          <a class="mrow" href="#contato" data-plan="Post avulso (R$30)">
+            <span class="mrow__top">
+              <span class="mrow__name">Post avulso</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>30<em>por post</em></span>
+            </span>
+            <span class="mrow__desc">Criação individual de post, sem compromisso mensal.</span>
+          </a>
+          <a class="mrow" href="#contato" data-plan="Organização de perfil (R$100)">
+            <span class="mrow__top">
+              <span class="mrow__name">Organização de perfil</span>
+              <span class="mrow__lead" aria-hidden="true"></span>
+              <span class="mrow__price"><small>R$</small>100<em>valor único</em></span>
+            </span>
+            <span class="mrow__desc">Apenas organização visual, sem criação de conteúdo.</span>
+          </a>
         </div>
       </div>
     </div>
@@ -276,304 +281,212 @@
 
   <!-- ===== PORTFÓLIO ===== -->
   <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Trabalhos realizados</p>
-        <h2 class="section-title">Portfólio</h2>
-        <p class="section-subtitle">Uma seleção de conteúdos criados e produzidos para clientes reais.</p>
+    <div class="wrap">
+      <div class="portfolio__head">
+        <h2>Portfólio</h2>
       </div>
 
-      <div class="portfolio__grid">
-        <article class="portfolio-card portfolio-card--wide reveal">
-          <div class="portfolio-card__media">
-            <img src="img/portfolio-semijoias-still.jpg" alt="Still de produto para a Yas Semijoias">
-          </div>
-          <div class="portfolio-card__info">
-            <span class="portfolio-card__tag">Still de Produto</span>
-            <h3>Yas Semijoias — Still de Produto</h3>
-            <p>Produção fotográfica de still para destacar o brilho e os detalhes das peças em conteúdo para redes sociais.</p>
-          </div>
-        </article>
+      <div class="portfolio__grid g12">
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/portfolio-semijoias-still.jpg" alt="Still de produto das semijoias da Yas Semijoias" width="1200" height="1600" loading="lazy"></div>
+          <figcaption><strong>Yas Semijoias</strong><span>Still de produto</span></figcaption>
+        </figure>
 
-        <article class="portfolio-card reveal">
-          <div class="portfolio-card__media">
-            <img src="img/portfolio-semijoias-editorial.jpg" alt="Editorial de pulseiras e semijoias da Yas Semijoias">
-          </div>
-          <div class="portfolio-card__info">
-            <span class="portfolio-card__tag">Editorial</span>
-            <h3>Yas Semijoias — Coleção</h3>
-            <p>Composição editorial para apresentar peças da coleção de forma elegante e vendável.</p>
-          </div>
-        </article>
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/portfolio-semijoias-editorial.jpg" alt="Pulseiras da coleção da Yas Semijoias" width="1200" height="1600" loading="lazy"></div>
+          <figcaption><strong>Yas Semijoias</strong><span>Coleção</span></figcaption>
+        </figure>
 
-        <article class="portfolio-card reveal">
-          <div class="portfolio-card__media">
-            <img src="img/portfolio-ceci-embalagem.jpg" alt="Embalagem da Ceci Boutique">
-          </div>
-          <div class="portfolio-card__info">
-            <span class="portfolio-card__tag">Identidade Visual</span>
-            <h3>Ceci Boutique</h3>
-            <p>Registro da experiência de unboxing, reforçando a identidade visual da marca no conteúdo.</p>
-          </div>
-        </article>
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/portfolio-ceci-embalagem.jpg" alt="Embalagem da Ceci Boutique" width="900" height="1600" loading="lazy"></div>
+          <figcaption><strong>Ceci Boutique</strong><span>Identidade visual</span></figcaption>
+        </figure>
 
-        <article class="portfolio-card reveal">
-          <div class="portfolio-card__media">
-            <img src="img/portfolio-moda-still.jpg" alt="Still de moda para a Ceci Boutique">
-          </div>
-          <div class="portfolio-card__info">
-            <span class="portfolio-card__tag">Still de Moda</span>
-            <h3>Ceci Boutique — Still de Moda</h3>
-            <p>Still de moda com foco no caimento e nos detalhes da peça para conteúdo de e-commerce.</p>
-          </div>
-        </article>
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/portfolio-moda-still.jpg" alt="Still de moda para a Ceci Boutique" width="1200" height="1600" loading="lazy"></div>
+          <figcaption><strong>Ceci Boutique</strong><span>Still de moda</span></figcaption>
+        </figure>
 
-        <article class="portfolio-card portfolio-card--wide reveal">
-          <div class="portfolio-card__media">
-            <img src="img/portfolio-ensaio-retrato.jpg" alt="Ensaio fotográfico para a Ceci Boutique">
-          </div>
-          <div class="portfolio-card__info">
-            <span class="portfolio-card__tag">Ensaio</span>
-            <h3>Ceci Boutique — Ensaio</h3>
-            <p>Produção de ensaio fotográfico para redes sociais, com identidade visual leve e autêntica.</p>
-          </div>
-        </article>
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/portfolio-ensaio-retrato.jpg" alt="Ensaio fotográfico para a Ceci Boutique" width="900" height="1600" loading="lazy"></div>
+          <figcaption><strong>Ceci Boutique</strong><span>Ensaio</span></figcaption>
+        </figure>
+
+        <figure class="work">
+          <div class="work__img" data-reveal><img src="img/evento-cobertura.jpg" alt="Cobertura de um evento da Farmasi, com uma apresentadora falando ao público" width="1200" height="1600" loading="lazy"></div>
+          <figcaption><strong>Cobertura de eventos</strong><span>Preço a combinar</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- ===== PROCESSO ===== -->
   <section class="process" id="processo">
-    <div class="container">
-      <div class="section-head section-head--light reveal">
-        <p class="eyebrow">Como eu trabalho</p>
-        <h2 class="section-title">Processo de trabalho</h2>
-        <p class="section-subtitle">Um passo a passo claro para garantir organização, qualidade e resultado em cada entrega.</p>
+    <div class="wrap">
+      <div class="process__head">
+        <h2>Processo de trabalho</h2>
       </div>
 
-      <div class="process__steps">
-        <div class="process-step reveal">
-          <span class="process-step__number">01</span>
+      <ol class="steps">
+        <li>
           <h3>Briefing</h3>
-          <p>Entendo seu negócio, seu público e seus objetivos com as redes sociais.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step__number">02</span>
+          <p>Entendo seu negócio, seu público e o que você quer das redes.</p>
+        </li>
+        <li>
           <h3>Planejamento</h3>
-          <p>Organizo um calendário de conteúdo alinhado à estratégia definida.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step__number">03</span>
+          <p>Monto o calendário de conteúdo com base no que conversamos.</p>
+        </li>
+        <li>
           <h3>Criação</h3>
-          <p>Produzo posts, Reels, carrosséis e stories com identidade visual própria.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step__number">04</span>
+          <p>Produzo posts, reels, carrosséis e stories com a identidade da marca.</p>
+        </li>
+        <li>
           <h3>Aprovação</h3>
-          <p>Envio o material para validação antes de qualquer publicação.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step__number">05</span>
+          <p>Você vê o material antes de qualquer publicação.</p>
+        </li>
+        <li>
           <h3>Publicação</h3>
-          <p>Realizo as postagens seguindo o planejamento e o melhor horário.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step__number">06</span>
+          <p>Publico no melhor horário, seguindo o planejamento.</p>
+        </li>
+        <li>
           <h3>Análise de resultados</h3>
-          <p>Acompanho o desempenho do conteúdo para ajustar a estratégia sempre que preciso.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RESULTADOS / DIFERENCIAIS ===== -->
-  <section class="results" id="resultados">
-    <div class="container results__grid">
-      <div class="results__content reveal">
-        <p class="eyebrow">Resultados &amp; diferenciais</p>
-        <h2 class="section-title">O que me diferencia</h2>
-        <p class="section-subtitle">
-          Ainda no início de carreira, mas com dedicação total em cada projeto — cada perfil é
-          tratado com o mesmo cuidado que eu daria ao meu próprio negócio.
-        </p>
-
-        <div class="results__list">
-          <div class="results__item">
-            <span class="results__check">✓</span>
-            <p>Atenção próxima e personalizada em cada conta atendida</p>
-          </div>
-          <div class="results__item">
-            <span class="results__check">✓</span>
-            <p>Conteúdo pensado com estratégia, não só estética</p>
-          </div>
-          <div class="results__item">
-            <span class="results__check">✓</span>
-            <p>Comprometimento com prazos e comunicação clara</p>
-          </div>
-          <div class="results__item">
-            <span class="results__check">✓</span>
-            <p>Aprendizado constante das tendências das redes sociais</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="results__highlight reveal">
-        <div class="highlight-card">
-          <span class="highlight-card__quote">"</span>
-          <p class="highlight-card__number">3 novos clientes</p>
-          <p class="highlight-card__desc">conquistados por uma cliente em uma única semana, a partir de apenas 1 post publicado.</p>
-          <p class="highlight-card__source">* Resultado real relatado por cliente atendida — Jr Detalhe Premium</p>
-        </div>
-      </div>
+          <p>Acompanho o desempenho e ajusto o que for preciso.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- ===== DEPOIMENTOS ===== -->
   <section class="testimonials" id="depoimentos">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Depoimentos</p>
-        <h2 class="section-title">O que dizem sobre o meu trabalho</h2>
-        <p class="section-subtitle">
-          Prints reais de conversas com clientes sobre o trabalho entregue.
-        </p>
+    <div class="wrap">
+      <div class="testimonials__head">
+        <h2>O que dizem sobre o meu trabalho</h2>
+        <p class="testimonials__intro">Prints de conversas com clientes. Um único post rendeu 3 novos clientes para a Jr Detalhe Premium.</p>
       </div>
 
-      <div class="testimonials__grid">
-        <div class="testimonial-card testimonial-card--screenshot reveal">
-          <span class="testimonial-card__badge">Depoimento real</span>
-          <div class="testimonial-card__shot">
-            <img src="img/feedback-resultado.jpg" alt="Print real de cliente relatando 3 novos clientes conquistados a partir de um post">
-          </div>
-          <div class="testimonial-card__author">
-            <strong>Jr Detalhe Premium</strong>
-            <span>Cliente atendida</span>
-          </div>
-        </div>
+      <div class="testimonials__grid g12">
+        <figure class="proof">
+          <div class="proof__shot" data-reveal><img src="img/feedback-resultado.jpg" alt="Print de conversa: cliente conta que ganhou 3 novos clientes a partir de um post" width="1169" height="507" loading="lazy"></div>
+          <figcaption><strong>Jr Detalhe Premium</strong><span>Cliente atendida</span></figcaption>
+        </figure>
 
-        <div class="testimonial-card testimonial-card--screenshot reveal">
-          <span class="testimonial-card__badge">Depoimento real</span>
-          <div class="testimonial-card__shot">
-            <img src="img/feedback-video-2.jpg" alt="Print real de cliente aprovando um vídeo entregue">
-          </div>
-          <div class="testimonial-card__author">
-            <strong>Luhh Passos</strong>
-            <span>Designer</span>
-          </div>
-        </div>
+        <figure class="proof">
+          <div class="proof__shot" data-reveal><img src="img/feedback-video-2.jpg" alt="Print de conversa: cliente aprovando um vídeo entregue" width="1170" height="553" loading="lazy"></div>
+          <figcaption><strong>Luhh Passos</strong><span>Designer</span></figcaption>
+        </figure>
 
-        <div class="testimonial-card testimonial-card--screenshot reveal">
-          <span class="testimonial-card__badge">Depoimento real</span>
-          <div class="testimonial-card__shot">
-            <img src="img/feedback-video-1.jpg" alt="Print real de cliente elogiando um vídeo entregue">
-          </div>
-          <div class="testimonial-card__author">
-            <strong>Cliente atendida</strong>
-            <span>Vídeo / Reels</span>
-          </div>
-        </div>
+        <figure class="proof">
+          <div class="proof__shot" data-reveal><img src="img/feedback-video-1.jpg" alt="Print de conversa: cliente elogiando um vídeo entregue" width="1169" height="560" loading="lazy"></div>
+          <figcaption><strong>Cliente atendida</strong><span>Vídeo / Reels</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTATO ===== -->
   <section class="contact" id="contato">
-    <div class="container contact__grid">
-      <div class="contact__info reveal">
-        <p class="eyebrow">Vamos conversar</p>
-        <h2 class="section-title section-title--light">Pronta para elevar o seu perfil?</h2>
-        <p class="contact__desc">
-          Me chama e vamos entender juntas qual a melhor forma de deixar sua marca mais
-          presente, profissional e atrativa nas redes sociais.
-        </p>
+    <div class="wrap">
+      <div class="contact__grid g12">
+        <div class="contact__info">
+          <h2>Vamos construir uma marca que se destaca?</h2>
+          <p class="contact__desc">
+            Me chama e a gente entende juntas qual é o melhor caminho para a sua marca
+            aparecer mais e melhor nas redes.
+          </p>
 
-        <div class="contact__channels">
-          <a href="https://wa.me/5533998521669" target="_blank" rel="noopener" class="contact__channel">
-            <span class="contact__channel-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>
-            </span>
-            <span>
-              <strong>WhatsApp</strong>
-              <em>(33) 99852-1669</em>
-            </span>
-          </a>
-
-          <a href="https://www.instagram.com/davila_socialmidia" target="_blank" rel="noopener" class="contact__channel">
-            <span class="contact__channel-icon">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            </span>
-            <span>
-              <strong>Instagram</strong>
-              <em>@davila_socialmidia</em>
-            </span>
-          </a>
-
-          <a href="mailto:juliaalvernaz467@gmail.com" class="contact__channel">
-            <span class="contact__channel-icon">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>
-              <strong>E-mail</strong>
-              <em>juliaalvernaz467@gmail.com</em>
-            </span>
-          </a>
+          <ul class="channels">
+            <li>
+              <span>WhatsApp</span>
+              <a href="https://wa.me/5533998521669" target="_blank" rel="noopener">(33) 99852-1669</a>
+            </li>
+            <li>
+              <span>Instagram</span>
+              <a href="https://www.instagram.com/davila_socialmidia" target="_blank" rel="noopener">@davila_socialmidia</a>
+            </li>
+            <li>
+              <span>E-mail</span>
+              <a href="mailto:juliaalvernaz467@gmail.com">juliaalvernaz467@gmail.com</a>
+            </li>
+          </ul>
         </div>
+
+        <form class="form" id="orcamentoForm">
+          <h3>Solicitar orçamento</h3>
+
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Só números, com DDD" inputmode="numeric" pattern="[0-9]{10,11}" title="Digite só números, com DDD (10 ou 11 dígitos)" autocomplete="tel-national" required>
+          </div>
+
+          <div class="field">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico">
+              <optgroup label="Pacotes de divulgação digital">
+                <option value="Pacote Básico (R$280)">Básico: R$ 280</option>
+                <option value="Pacote Intermediário (R$330)">Intermediário: R$ 330</option>
+                <option value="Pacote Completo (R$380)">Completo: R$ 380</option>
+              </optgroup>
+              <optgroup label="Plano mensal">
+                <option value="Plano mensal, 1 mês (R$350)">1 mês: R$ 350</option>
+                <option value="Plano mensal, 3 meses (R$750)">3 meses: R$ 750</option>
+              </optgroup>
+              <optgroup label="Logo e identidade visual">
+                <option value="Logo Simples (R$100)">Logo Simples: R$ 100</option>
+                <option value="Identidade Visual Básica (R$200)">Identidade Visual Básica: R$ 200</option>
+                <option value="Identidade Visual Intermediária (R$250)">Identidade Visual Intermediária: R$ 250</option>
+                <option value="Identidade Visual Completa (R$400)">Identidade Visual Completa: R$ 400</option>
+              </optgroup>
+              <optgroup label="Avulsos">
+                <option value="Post avulso (R$30)">Post avulso: R$ 30</option>
+                <option value="Organização de perfil (R$100)">Organização de perfil: R$ 100</option>
+                <option value="Cobertura de eventos (preço a combinar)">Cobertura de eventos: preço a combinar</option>
+              </optgroup>
+              <option value="Outro / quero saber mais">Outro / quero saber mais</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte um pouco sobre o seu negócio"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--solid btn--block">Enviar pelo WhatsApp</button>
+          <p class="form__hint">Ao enviar, o WhatsApp abre com a sua mensagem pronta.</p>
+        </form>
       </div>
-
-      <form class="contact__form reveal" id="orcamentoForm">
-        <h3>Solicitar orçamento</h3>
-
-        <div class="form-field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-        </div>
-
-        <div class="form-field">
-          <label for="whatsapp">WhatsApp</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
-        </div>
-
-        <div class="form-field">
-          <label for="servico">Serviço de interesse</label>
-          <select id="servico" name="servico">
-            <option value="Plano Mensal (R$240)">Plano Mensal — R$240</option>
-            <option value="30 Posts Programados (R$1000)">30 Posts Programados — R$1000</option>
-            <option value="Post Avulso (R$30)">Post Avulso — R$30</option>
-            <option value="Organização de Perfil (R$40)">Organização de Perfil — R$40</option>
-            <option value="Outro / quero saber mais">Outro / quero saber mais</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre o seu negócio..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn--primary btn--block">Enviar via WhatsApp</button>
-        <p class="contact__form-hint">Ao enviar, abriremos o WhatsApp com sua mensagem pronta.</p>
-      </form>
     </div>
   </section>
 
+  </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#topo" class="nav__logo nav__logo--footer">Júlia<span>.</span></a>
-      <p>&copy; <span id="year"></span> Júlia Social Media. Todos os direitos reservados.</p>
-      <div class="footer__socials">
-        <a href="https://www.instagram.com/davila_socialmidia" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    <div class="wrap">
+      <div class="footer__top">
+        <a href="#topo" class="footer__brand" aria-label="JD Social Mídia, ir ao topo">
+          <img src="img/logo-jd-claro.png" alt="JD" width="329" height="208">
         </a>
-        <a href="https://wa.me/5533998521669" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20z"/></svg>
-        </a>
+        <p class="footer__links">
+          <a href="https://www.instagram.com/davila_socialmidia" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5533998521669" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:juliaalvernaz467@gmail.com">E-mail</a>
+        </p>
       </div>
+
+      <p class="wordmark" role="img" aria-label="JD, social mídia">
+        <span aria-hidden="true">J</span>
+        <span class="wordmark__mid" aria-hidden="true">social mídia<br>criatividade, estratégia<br>e presença digital</span>
+        <span aria-hidden="true">D</span>
+      </p>
+
+      <p class="footer__legal">&copy; <span id="year">2026</span> JD Social Mídia. Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
 
   <script src="js/script.js"></script>
 </body>

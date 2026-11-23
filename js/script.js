@@ -5,115 +5,111 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Barra de progresso de rolagem ---------- */
-  const progressBar = document.getElementById('scrollProgress');
-  const updateProgress = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    if (progressBar) progressBar.style.width = `${progress}%`;
-  };
-
-  /* ---------- Nav: sombra ao rolar ---------- */
+  /* ---------- Nav: linha embaixo ao rolar ---------- */
   const nav = document.getElementById('nav');
-  const backToTop = document.getElementById('backToTop');
-
-  const handleScrollEffects = () => {
-    const scrolled = window.scrollY > 40;
-    nav.classList.toggle('is-scrolled', scrolled);
-    backToTop.classList.toggle('is-visible', window.scrollY > 500);
-    updateProgress();
-  };
-
-  window.addEventListener('scroll', handleScrollEffects, { passive: true });
-  handleScrollEffects();
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* ---------- Menu mobile ---------- */
   const navToggle = document.getElementById('navToggle');
-  const navLinksWrap = document.getElementById('navLinks');
+  const navLinks = document.getElementById('navLinks');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinksWrap.classList.toggle('is-open');
-    navToggle.classList.toggle('is-active', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  const setMenu = (open) => {
+    navLinks.classList.toggle('is-open', open);
+    navToggle.classList.toggle('is-active', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('is-open')));
+  navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+      setMenu(false);
+      navToggle.focus();
+    }
   });
-
-  document.querySelectorAll('.nav__link').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinksWrap.classList.remove('is-open');
-      navToggle.classList.remove('is-active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
+    if (e.matches) setMenu(false);
   });
 
   /* ---------- Link ativo conforme a seção visível ---------- */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinkMap = new Map();
-  document.querySelectorAll('.nav__link').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('#')) navLinkMap.set(href.slice(1), link);
+  const linkById = new Map();
+  navLinks.querySelectorAll('.nav__link').forEach((link) => {
+    linkById.set(link.getAttribute('href').slice(1), link);
   });
+  // "Valores" cobre as três seções de preços
+  if (linkById.has('planos')) {
+    linkById.set('mensal', linkById.get('planos'));
+    linkById.set('identidade', linkById.get('planos'));
+  }
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        const link = navLinkMap.get(entry.target.id);
-        if (!link) return;
-        if (entry.isIntersecting) {
-          navLinkMap.forEach((l) => l.classList.remove('is-active'));
-          link.classList.add('is-active');
-        }
+        if (!entry.isIntersecting) return;
+        const link = linkById.get(entry.target.id);
+        linkById.forEach((l) => l.classList.remove('is-active'));
+        if (link) link.classList.add('is-active');
       });
     },
     { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
   );
+  document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
 
-  sections.forEach((section) => sectionObserver.observe(section));
+  /* ---------- Imagens se revelam uma vez ao entrar na tela ---------- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const settle = (el) => setTimeout(() => el.removeAttribute('data-reveal'), 2200);
 
-  /* ---------- Animações de entrada (reveal) ---------- */
-  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          settle(entry.target);
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealEls.forEach((el) => el.removeAttribute('data-reveal'));
+  }
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const delay = (Array.from(el.parentElement.children).indexOf(el) % 4) * 90;
-          setTimeout(() => el.classList.add('is-visible'), delay);
-          revealObserver.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-
-  /* ---------- Preenche o select do formulário a partir dos planos ---------- */
+  /* ---------- Clicar num valor já escolhe o serviço no formulário ---------- */
   const servicoSelect = document.getElementById('servico');
 
-  document.querySelectorAll('[data-plan]').forEach((planBtn) => {
-    planBtn.addEventListener('click', () => {
-      const planValue = planBtn.getAttribute('data-plan');
-      if (servicoSelect && planValue) {
-        const optionExists = Array.from(servicoSelect.options).some((opt) => opt.value === planValue);
-        if (optionExists) servicoSelect.value = planValue;
-      }
+  document.querySelectorAll('[data-plan]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const value = el.getAttribute('data-plan');
+      if (!servicoSelect || !value) return;
+      const exists = Array.from(servicoSelect.options).some((opt) => opt.value === value);
+      if (exists) servicoSelect.value = value;
     });
   });
 
   /* ---------- Formulário de orçamento -> WhatsApp ---------- */
-  const orcamentoForm = document.getElementById('orcamentoForm');
+  const form = document.getElementById('orcamentoForm');
   const WHATSAPP_NUMBER = '5533998521669';
 
-  if (orcamentoForm) {
-    orcamentoForm.addEventListener('submit', (event) => {
+  /* ---------- Telefone: aceita só números (digitando, colando ou autopreenchendo) ---------- */
+  const phoneInput = document.getElementById('whatsapp');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      let digits = phoneInput.value.replace(/\D/g, '');
+      // número colado com o código do país (+55): tira o 55 do começo
+      if (digits.length > 11 && digits.startsWith('55')) digits = digits.slice(2);
+      digits = digits.slice(0, 11);
+      if (phoneInput.value !== digits) phoneInput.value = digits;
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
 
       const nome = document.getElementById('nome').value.trim();
@@ -126,12 +122,9 @@
         `Tenho interesse em: ${servico}.`,
         `Meu WhatsApp para contato: ${whatsapp}.`,
       ];
-
       if (mensagem) linhas.push(`Mensagem: ${mensagem}`);
 
-      const texto = encodeURIComponent(linhas.join('\n'));
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`;
-
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(linhas.join('\n'))}`;
       window.open(url, '_blank', 'noopener');
     });
   }
