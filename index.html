@@ -8,7 +8,11 @@
   <meta name="theme-color" content="#4a0f1b">
   <link rel="icon" type="image/png" href="img/logo-jd.png">
 
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    /* segurança: se algo travar, a entrada do topo começa sozinha em 3 s */
+    setTimeout(function () { document.documentElement.classList.add('is-ready'); }, 3000);
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

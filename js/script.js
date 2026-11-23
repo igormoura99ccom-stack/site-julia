@@ -5,6 +5,32 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Auxiliares ---------- */
+  const imageReady = (img) =>
+    new Promise((resolve) => {
+      if (!img || img.complete) return resolve();
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', resolve, { once: true });
+    });
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  /* ---------- Entrada do topo: só começa com as fontes e a foto prontas ----------
+     Sem isso, no celular (conexão mais lenta) a animação roda em cima de uma
+     caixa vazia e a foto aparece de repente depois. */
+  const fontsReady =
+    document.fonts && document.fonts.load
+      ? Promise.all([
+          document.fonts.load('400 1em "Bodoni Moda"'),
+          document.fonts.load('italic 400 1em "Bodoni Moda"'),
+          document.fonts.load('400 1em "Montserrat"'),
+        ]).catch(() => {})
+      : Promise.resolve();
+
+  Promise.race([
+    Promise.all([fontsReady, imageReady(document.querySelector('.hero__photo img'))]),
+    wait(2500),
+  ]).then(() => requestAnimationFrame(() => document.documentElement.classList.add('is-ready')));
+
   /* ---------- Nav: linha embaixo ao rolar ---------- */
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -59,25 +85,63 @@
   );
   document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
 
-  /* ---------- Imagens se revelam uma vez ao entrar na tela ---------- */
+  /* ---------- Imagens: baixam antes e só se revelam depois de prontas ---------- */
   const revealEls = document.querySelectorAll('[data-reveal]');
-  const settle = (el) => setTimeout(() => el.removeAttribute('data-reveal'), 2200);
+  const settle = (el) => setTimeout(() => el.removeAttribute('data-reveal'), 2400);
 
   if ('IntersectionObserver' in window) {
+    // 1) a foto começa a baixar uma tela e meia antes de aparecer
+    const preloadObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const img = entry.target.querySelector('img');
+          if (img) img.loading = 'eager';
+          preloadObserver.unobserve(entry.target);
+        });
+      },
+      { rootMargin: '0px 0px 150% 0px' }
+    );
+
+    // 2) a animação só roda com a foto já carregada e decodificada
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-in');
-          settle(entry.target);
-          revealObserver.unobserve(entry.target);
+          const el = entry.target;
+          revealObserver.unobserve(el);
+          const img = el.querySelector('img');
+          if (img) img.loading = 'eager';
+          imageReady(img)
+            .then(() => (img && img.decode ? img.decode().catch(() => {}) : null))
+            .then(() => {
+              el.classList.add('is-in');
+              settle(el);
+            });
         });
       },
       { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
     );
-    revealEls.forEach((el) => revealObserver.observe(el));
+
+    revealEls.forEach((el) => {
+      preloadObserver.observe(el);
+      revealObserver.observe(el);
+    });
   } else {
     revealEls.forEach((el) => el.removeAttribute('data-reveal'));
+  }
+
+  /* ---------- Telas de toque: sem hover, o destaque acompanha o item no meio da tela ---------- */
+  if ('IntersectionObserver' in window && window.matchMedia('(hover: none)').matches) {
+    const litObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => entry.target.classList.toggle('is-lit', entry.isIntersecting));
+      },
+      { rootMargin: '-48% 0px -48% 0px', threshold: 0 }
+    );
+    document
+      .querySelectorAll('.svc-list li, .tier, .mrow, .steps li, .work, .proof')
+      .forEach((el) => litObserver.observe(el));
   }
 
   /* ---------- Clicar num valor já escolhe o serviço no formulário ---------- */
